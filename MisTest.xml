@@ -13,6 +13,7 @@
         <class name="com.mis.market.test.MisHomecatTest"/>
         <class name="com.mis.market.test.MisHomeitemTest"/>
         <class name="com.mis.market.test.MisRecomcatTest"/>
+        <class name="com.mis.market.test.MisSearchTest"/>
     </classes>
   </test> <!-- Test -->
    <listeners>
