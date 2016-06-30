@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="TestSuite" verbose="1">
+  <test name="MisTest">
+    <classes>
+        <!-- <class name="Basic.Test"/>-->
+        <class name="com.mis.market.test.ItemSkuTest"/>
+        <class name="com.mis.market.test.ItemSaleTest"/>
+        <class name="com.mis.market.test.ItemExceptionTest"/>
+        <class name="com.mis.market.test.ItemCategoryTest"/>
+        <class name="com.mis.market.test.MisHomegalleryTest"/>
+        <class name="com.mis.market.test.MisHomecatTest"/>
+        <class name="com.mis.market.test.MisHomeitemTest"/>
+        <class name="com.mis.market.test.MisRecomcatTest"/>
+    </classes>
+  </test> <!-- Test -->
+   <listeners>
+  	  <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+      <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+  </listeners>  
+</suite> <!-- Suite -->

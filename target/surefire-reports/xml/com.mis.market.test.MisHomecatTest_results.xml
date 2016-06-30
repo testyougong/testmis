@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="MisTest"
+           tests="1"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="11.509">
+  <properties />
+  
+  
+            <testcase name="misHomecatTest" time="11.509" classname="com.mis.market.test.MisHomecatTest" />
+      
+</testsuite>
