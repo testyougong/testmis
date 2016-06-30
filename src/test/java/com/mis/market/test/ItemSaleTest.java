@@ -56,7 +56,7 @@ public class ItemSaleTest extends BasicDriver{
 		//从excel里取sale_id
 		ExcelWorkBook excelbook = new ExcelWorkBook();
 		try{
-			List<String> sale_list = excelbook.readSaleId("/Users/zhouxin/Documents/workspace/mis/list.xls");
+			List<String> sale_list = excelbook.readSaleId("/Users/zhouxin/Documents/project/testmis/list.xls");
 			int sale_size = sale_list.size();
 			for(int i=0;i<sale_size;i++){
 				String sale_id = sale_list.get(i);
