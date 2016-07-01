@@ -1,16 +1,9 @@
 package com.mis.market.pages;
 
-import Basic.BasicDriver;
-import org.junit.Assert;
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ThreadGuard;
-import org.openqa.selenium.support.ui.Select;
 
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 import static org.testng.Assert.assertEquals;
@@ -42,6 +35,15 @@ public class MisSearchPage {
         return element;
     }
 
+    //列表中最后一个热搜词文案
+    public String HotqText(){
+        List<WebElement> list = driver.findElements(By.xpath("//button[@class= 'btn btn-link delete']"));
+        int position = list.size();
+        element = driver.findElement(By.xpath("//html/body/div[1]/div[2]/div/div/div[3]/table/tbody/tr["+position+"]/td[2]"));
+        String text = element.getText();
+        return text;
+    }
+
     //填写热搜词
     public void insertHotq(String text){
         driver.findElement(By.xpath("//input[@type='text']")).sendKeys(text);
@@ -50,10 +52,12 @@ public class MisSearchPage {
     }
 
     //检查热搜词是否添加成功
-    public void checkHotqInsert(String text){
+    public void checkHotqInsert(){
         List<WebElement> list = driver.findElements(By.xpath("//button[@class= 'btn btn-link delete']"));
         int position = list.size();
-        assertEquals (text,driver.findElement(By.xpath("//html/body/div[1]/div[2]/div/div/div[3]/table/tbody/tr["+position+"]/td[2]")).getText());
+        MisSearchPage msp = new MisSearchPage(driver);
+        msp.HotqText();
+        assertEquals (driver.findElement(By.xpath("//html/body/div[1]/div[2]/div/div/div[3]/table/tbody/tr["+position+"]/td[2]")).getText(),msp.HotqText());
     }
 
     //删除热搜词
@@ -67,15 +71,18 @@ public class MisSearchPage {
     }
 
     //检查热搜词是否删除成功
-    public void checkHotqDelete(String text){
+    public void checkHotqDelete(){
         List<WebElement> list = driver.findElements(By.xpath("//button[@class= 'btn btn-link delete']"));
         int position = list.size();
-        if((driver.findElement(By.xpath("//html/body/div[1]/div[2]/div/div/div[3]/table/tbody/tr["+position+"]/td[2]")).getText().equals(text))){
-            System.out.print("热搜词没有删除成功");
-            assertEquals (text,driver.findElement(By.xpath("//html/body/div[1]/div[2]/div/div/div[3]/table/tbody/tr["+position+"]/td[2]")).getText());
+        MisSearchPage msp = new MisSearchPage(driver);
+        msp.HotqText();
+        if((driver.findElement(By.xpath("//html/body/div[1]/div[2]/div/div/div[3]/table/tbody/tr["+position+"]/td[2]")).getText().equals(msp.HotqText()))){
+            System.out.println("热搜词没有删除成功");
+            assertEquals (driver.findElement(By.xpath("//html/body/div[1]/div[2]/div/div/div[3]/table/tbody/tr["+position+"]/td[2]")).getText(),msp.HotqText());
         }
-
     }
+
+
 
 
 }

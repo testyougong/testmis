@@ -44,10 +44,13 @@ public class MisSearchTest extends BasicDriver {
         mst.mis().click();//展开mis模块
         mst.search().click();//进入搜索页
         mst.insertHotq_btn().click();//添加
+
         mst.insertHotq("自动化测试");//添加热搜词
-        mst.checkHotqInsert("自动化测试");//检查热搜词是否添加成功
+        mst.HotqText();//取最后一行的搜索文案
+        mst.checkHotqInsert();//检查热搜词是否添加成功
+
         mst.deleteHotq();//删除热搜词
-        mst.checkHotqDelete("自动化测试");//检查热搜词是否删除成功
+        mst.checkHotqDelete();//检查热搜词是否删除成功
 
     }
 }
