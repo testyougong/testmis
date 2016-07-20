@@ -46,7 +46,7 @@ public class ItemSkuTest extends BasicDriver{
 		//从excel里取sku_id
 		ExcelWorkBook excelbook = new ExcelWorkBook();
 		try{
-			List<String> sku_list = excelbook.readSkuId("/Users/zhouxin/Documents/project/testmis/list.xls");
+			List<String> sku_list = excelbook.readSkuId("D://GitProsty//testmis//list.xls");
 			int sku_size = sku_list.size();
 			for(int i=0;i<sku_size;i++){
 				String item_id = sku_list.get(i);

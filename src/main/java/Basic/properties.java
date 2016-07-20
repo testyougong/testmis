@@ -12,7 +12,7 @@ public class properties {
 	
 	public properties() throws IOException{
 		Properties pro = new Properties();
-		BufferedInputStream in = new BufferedInputStream(new FileInputStream("/Users/zhouxin/Documents/workspace/mis/src/main/java/properties/market.properties")); 
+		BufferedInputStream in = new BufferedInputStream(new FileInputStream("D://GitProsty//testmis//src//main//java//properties//market.properties")); 
 		pro.load(in);
 		
 		properties.url = pro.getProperty("url");
