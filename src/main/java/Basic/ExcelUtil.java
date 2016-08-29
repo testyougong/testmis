@@ -97,7 +97,6 @@ public class ExcelUtil {
 		}
 	}
 	//从Excel文件获取测试数据的静态方法
-	@SuppressWarnings("resource")
 	public static Object[][] getTestData(String excelFilePath,String sheetName) throws IOException{
 		//根据参数传入的数据文件路径和文件名称，组合出Excel数据文件的绝对路径
 		//声明一个file对象
