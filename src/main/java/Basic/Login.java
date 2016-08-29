@@ -6,7 +6,7 @@ import com.mis.market.pages.LoginPage;
 
 public class Login {
 	
-	public static void execute(WebDriver driver,String userName,String passWord) throws Exception{
+	public static void execute(WebDriver driver) throws Exception{
 		driver.get(Constant.Url);
 		LoginPage loginPage=new LoginPage(driver);
 		loginPage.userName().sendKeys(Constant.UserName);

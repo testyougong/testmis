@@ -42,8 +42,8 @@ public class ItemCategoryTest extends BasicDriver{
 		System.setProperty("Webdriver.firefox.bin","c:\\Program File (X86)\\MozillaFirefox\\firefox.exe");
 		driver=new FirefoxDriver();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		Login.execute(driver, "admin@lsh123.com", "654321");
-		 
+//		Login.execute(driver, "admin@lsh123.com", "654321");
+		Login.execute(driver);
 		Thread.sleep(5000);
 		Assert.assertTrue(driver.getPageSource().contains("退出"));
 		

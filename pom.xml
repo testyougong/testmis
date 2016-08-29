@@ -7,7 +7,6 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
  
-	
 	<!-- maven 运行测试name -->
 	<name>selenium_maven_eclipse</name>
 	<url>http://maven.apache.org</url>
@@ -29,6 +28,12 @@
 			<version>6.9.10</version>
 			<scope>test</scope>
 		</dependency>
+		
+		    <dependency>  
+        <groupId>xml-apis</groupId>  
+        <artifactId>xml-apis</artifactId>  
+        <version>1.4.01</version>  
+    </dependency>  
     
 		<!-- 依赖reportNg 关联testNg-->
 		<dependency>

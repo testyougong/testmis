@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="56574" started-at="2016-08-26T11:00:46Z" finished-at="2016-08-26T11:01:43Z">
+  <suite name="Default suite" duration-ms="50696" started-at="2016-08-29T07:31:38Z" finished-at="2016-08-29T07:32:28Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="56574" started-at="2016-08-26T11:00:46Z" finished-at="2016-08-26T11:01:43Z">
+    <test name="Default test" duration-ms="50696" started-at="2016-08-29T07:31:38Z" finished-at="2016-08-29T07:32:28Z">
       <class name="com.mis.market.test.ItemSaleTest">
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.mis.market.test.ItemSaleTest@7aa7758e]" name="beforeMethod" is-config="true" duration-ms="16519" started-at="2016-08-26T19:00:46Z" finished-at="2016-08-26T19:01:03Z">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.mis.market.test.ItemSaleTest@4f39e80c]" name="beforeMethod" is-config="true" duration-ms="15423" started-at="2016-08-29T15:31:38Z" finished-at="2016-08-29T15:31:53Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="itemSaleTest()[pri:0, instance:com.mis.market.test.ItemSaleTest@7aa7758e]" name="itemSaleTest" duration-ms="39650" started-at="2016-08-26T19:01:03Z" finished-at="2016-08-26T19:01:42Z">
+        <test-method status="PASS" signature="itemSaleTest()[pri:0, instance:com.mis.market.test.ItemSaleTest@4f39e80c]" name="itemSaleTest" duration-ms="35252" started-at="2016-08-29T15:31:53Z" finished-at="2016-08-29T15:32:28Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- itemSaleTest -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.mis.market.test.ItemSaleTest@7aa7758e]" name="afterMethod" is-config="true" duration-ms="363" started-at="2016-08-26T19:01:42Z" finished-at="2016-08-26T19:01:43Z">
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.mis.market.test.ItemSaleTest@4f39e80c]" name="afterMethod" is-config="true" duration-ms="0" started-at="2016-08-29T15:32:28Z" finished-at="2016-08-29T15:32:28Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->

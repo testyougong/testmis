@@ -56,6 +56,7 @@ public class ItemSalePage {
 	// 销售列表数量检查
 	public void listCheck() throws Exception {
 		List<WebElement> sale_list = driver.findElements(objectMap.getLocator("mis.ItemSalePage.view_btn"));
+		Thread.sleep(1000);
 		Assert.assertEquals(12, sale_list.size());
 	}
 
@@ -119,11 +120,7 @@ public class ItemSalePage {
 		// 保存
 		driver.findElement(objectMap.getLocator("mis.ItemSalePage.save_btn")).click();
 
-		Alert alert = driver.switchTo().alert();
-		Assert.assertEquals("确认保存吗?", alert.getText());
-		alert.accept();
-		Assert.assertEquals("保存成功", alert.getText());
-		alert.accept();
+		alert_check("确认保存吗?");
 		// 获取待生效价格
 		String need_effect_price_s = driver.findElements(objectMap.getLocator("mis.ItemSalePage.sale_price")).get(10)
 				.getAttribute("value");
@@ -135,9 +132,7 @@ public class ItemSalePage {
 		 driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		// 保存成功
 		 
-		Alert alert_success = driver.switchTo().alert();
-		Assert.assertEquals("保存成功", alert_success.getText());
-		alert.accept();
+		 alert_check();
 		// 获取新的销售价
 		((JavascriptExecutor) driver).executeScript("window.scrollBy(0, -550)");
 
@@ -163,11 +158,9 @@ public class ItemSalePage {
 		driver.findElement(objectMap.getLocator("mis.ItemSalePage.sale_price1")).sendKeys("" + supply_price * 8);
 		// 保存
 		driver.findElement(objectMap.getLocator("mis.ItemSalePage.save_btn")).click();
-		Alert alert = driver.switchTo().alert();
-		Assert.assertEquals("确认保存吗?", alert.getText());
-		alert.accept();
-		Assert.assertEquals("保存成功", alert.getText());
-		alert.accept();
+		
+		alert_check("确认保存吗?");
+		
 		// 检测“确认更改”和“编辑”按钮是否存在
 		((JavascriptExecutor) driver).executeScript("window.scrollBy(0, 500)");
 
@@ -183,10 +176,9 @@ public class ItemSalePage {
 		// 点击“确认更改”
 		driver.findElement(objectMap.getLocator("mis.ItemSalePage.confrim_btn")).click();
 		driver.findElement(objectMap.getLocator("mis.ItemSalePage.sumitPri_btn")).click();
-		Alert alert_success = driver.switchTo().alert();
-
-		Assert.assertEquals("保存成功", alert_success.getText());
-		alert.accept();
+		
+		alert_check();
+		
 		// 获取待生效价格
 		String need_effect_price_s = driver.findElements(objectMap.getLocator("mis.ItemSalePage.sale_price")).get(10)
 				.getAttribute("value");
@@ -196,9 +188,9 @@ public class ItemSalePage {
 		// 检测“立即生效”按钮是否存在
 		isExist();
 		// 保存成功
-		Alert alert_success2 = driver.switchTo().alert();
-		Assert.assertEquals("保存成功", alert_success2.getText());
-		alert.accept();
+ 
+		alert_check();
+		
 		// 获取新的销售价
 		String sale_price_s = driver.findElements(objectMap.getLocator("mis.ItemSalePage.sale_price")).get(8)
 				.getAttribute("value");
@@ -217,12 +209,8 @@ public class ItemSalePage {
 		// 输入一个较大的销售价
 		driver.findElement(objectMap.getLocator("mis.ItemSalePage.sale_price1")).sendKeys("" + supply_price * 9);
 		// 保存
-		driver.findElement(objectMap.getLocator("mis.ItemSalePage.save_btn")).click();
-		Alert alert = driver.switchTo().alert();
-		Assert.assertEquals("确认保存吗?", alert.getText());
-		alert.accept();
-		Assert.assertEquals("保存成功", alert.getText());
-		alert.accept();
+		alert_check("确认保存吗?");
+		
 		((JavascriptExecutor) driver).executeScript("window.scrollBy(0, 500)");
 		// 检测“确认更改”和“编辑”按钮是否存在
 		Assert.assertTrue("'确认更改'按钮不存在",
@@ -234,11 +222,9 @@ public class ItemSalePage {
 		driver.findElement(objectMap.getLocator("mis.ItemSalePage.editPrice_text")).clear();
 		driver.findElement(objectMap.getLocator("mis.ItemSalePage.editPrice_text")).sendKeys("8.88");
 		driver.findElement(objectMap.getLocator("mis.ItemSalePage.editPrice_savebtn")).click();
-		Alert alert_edit = driver.switchTo().alert();
-		Assert.assertEquals("确定保存销售价吗", alert_edit.getText());
-		alert.accept();
-		Assert.assertEquals("保存成功", alert_edit.getText());
-		alert.accept();
+		
+		alert_check("确定保存销售价吗");
+		
 		// 获取待生效价格
 		DecimalFormat df = new DecimalFormat("#.00");
 		String need_effect_price_s = driver.findElements(objectMap.getLocator("mis.ItemSalePage.sale_price")).get(10)
@@ -249,9 +235,9 @@ public class ItemSalePage {
 		// 检测“立即生效”按钮是否存在
 		isExist();
 		// 保存成功
-		Alert alert_success2 = driver.switchTo().alert();
-		Assert.assertEquals("保存成功", alert_success2.getText());
-		alert.accept();
+ 
+		alert_check();
+		
 		// 获取新的销售价
 		String sale_price_s = driver.findElements(objectMap.getLocator("mis.ItemSalePage.sale_price")).get(8)
 				.getAttribute("value");
@@ -273,11 +259,20 @@ public class ItemSalePage {
 	}
 
 	// 提示check
-	public void alert_check() {
+ 
+	public void alert_check(String str) {
 		Alert alert = driver.switchTo().alert();
-		Assert.assertEquals("确认保存吗?", alert.getText());
+		Assert.assertEquals(str, alert.getText());
 		alert.accept();
 		Assert.assertEquals("保存成功", alert.getText());
 		alert.accept();
 	}
+	
+	public void alert_check(){
+		Alert alert= driver.switchTo().alert();
+		Assert.assertEquals("保存成功", alert.getText());
+		alert.accept();
+	}
+	
+ 
 }

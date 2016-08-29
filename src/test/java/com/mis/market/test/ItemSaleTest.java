@@ -59,7 +59,7 @@ public class ItemSaleTest {
 		itemsale.cancel_btn().click();
 		itemsale.edit_btn().click();
 		itemsale.save_btn().click();
-		itemsale.alert_check();// check详情保存
+		itemsale.alert_check("确认保存吗?");// check详情保存
 
 	}
 
@@ -68,7 +68,7 @@ public class ItemSaleTest {
 		System.setProperty("Webdriver.firefox.bin", "c:\\Program File (X86)\\MozillaFirefox\\firefox.exe");
 		driver = new FirefoxDriver();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		Login.execute(driver, "admin@lsh123.com", "654321");
+		Login.execute(driver);
 
 		Thread.sleep(5000);
 		Assert.assertTrue(driver.getPageSource().contains("退出"));
