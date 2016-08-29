@@ -18,7 +18,7 @@ public class MisLoginTest {
 	@Test
 	public void testMisLogin() throws Exception{
 		//driver.get(baseUrl+"/");
-		Login.execute(driver, "admin@lsh123.com", "654321");
+		Login.execute(driver);
 		 
 		Thread.sleep(5000);
 		Assert.assertTrue(driver.getPageSource().contains("退出"));

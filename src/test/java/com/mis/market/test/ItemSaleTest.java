@@ -12,6 +12,7 @@ import org.testng.annotations.Test;
 
 import com.mis.market.pages.ItemSalePage;
 
+import Basic.Constant;
 import Basic.ExcelWorkBook;
 import Basic.Login;
 
@@ -37,7 +38,7 @@ public class ItemSaleTest {
 		// 从excel里取sale_id
 		ExcelWorkBook excelbook = new ExcelWorkBook();
 		try {
-			List<String> sale_list = excelbook.readSaleId("D://GitProsty//testmis//list.xls");
+			List<String> sale_list = excelbook.readSaleId(Constant.TestDataExcelFilePath);
 			int sale_size = sale_list.size();
 			for (int i = 0; i < sale_size; i++) {
 				String sale_id = sale_list.get(i);

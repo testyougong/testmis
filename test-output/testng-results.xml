@@ -2,24 +2,24 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="50696" started-at="2016-08-29T07:31:38Z" finished-at="2016-08-29T07:32:28Z">
+  <suite name="Default suite" duration-ms="33649" started-at="2016-08-29T10:00:36Z" finished-at="2016-08-29T10:01:10Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="50696" started-at="2016-08-29T07:31:38Z" finished-at="2016-08-29T07:32:28Z">
-      <class name="com.mis.market.test.ItemSaleTest">
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.mis.market.test.ItemSaleTest@4f39e80c]" name="beforeMethod" is-config="true" duration-ms="15423" started-at="2016-08-29T15:31:38Z" finished-at="2016-08-29T15:31:53Z">
+    <test name="Default test" duration-ms="33649" started-at="2016-08-29T10:00:36Z" finished-at="2016-08-29T10:01:10Z">
+      <class name="com.mis.market.test.ItemCategoryTest">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.mis.market.test.ItemCategoryTest@7aa34f04]" name="beforeMethod" is-config="true" duration-ms="15075" started-at="2016-08-29T18:00:36Z" finished-at="2016-08-29T18:00:51Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="itemSaleTest()[pri:0, instance:com.mis.market.test.ItemSaleTest@4f39e80c]" name="itemSaleTest" duration-ms="35252" started-at="2016-08-29T15:31:53Z" finished-at="2016-08-29T15:32:28Z">
+        <test-method status="PASS" signature="itemCategoryTest()[pri:0, instance:com.mis.market.test.ItemCategoryTest@7aa34f04]" name="itemCategoryTest" duration-ms="18361" started-at="2016-08-29T18:00:51Z" finished-at="2016-08-29T18:01:10Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- itemSaleTest -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.mis.market.test.ItemSaleTest@4f39e80c]" name="afterMethod" is-config="true" duration-ms="0" started-at="2016-08-29T15:32:28Z" finished-at="2016-08-29T15:32:28Z">
+        </test-method> <!-- itemCategoryTest -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.mis.market.test.ItemCategoryTest@7aa34f04]" name="afterMethod" is-config="true" duration-ms="192" started-at="2016-08-29T18:01:10Z" finished-at="2016-08-29T18:01:10Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-      </class> <!-- com.mis.market.test.ItemSaleTest -->
+      </class> <!-- com.mis.market.test.ItemCategoryTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

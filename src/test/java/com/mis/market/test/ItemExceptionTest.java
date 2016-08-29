@@ -88,9 +88,7 @@ public class ItemExceptionTest /*extends BasicDriver*/ {
 		 for(int i=8;i>=0;i--){
 		 itemexception.filterCheck(i);
 		 }
- 
-		 
-		
+  
  
 	}
 

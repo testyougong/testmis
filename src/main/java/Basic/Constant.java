@@ -9,7 +9,10 @@ public class Constant {
 	// 定义密码的常量
 	public static final String PassWord = "654321";
 	 //定义excel文件路径常量
-	public static String TestDataExcelFilePath="d:\\mis测试数据.xlsx";
+	public static String TestDataExcelFilePath="src//main//java//properties//list.xls";
+	//mis定位方式和定位表达式配置文件相对路径
 	public static String propertiesFilePath="src//main//java//properties//market.properties";
+	//mis测试数据.xlsx相对路径
+	public static String MisTestDataPath="src//main//java//properties//MisTestDataPath.xlsx";
 
 }
