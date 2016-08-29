@@ -2,24 +2,24 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="35437" started-at="2016-07-20T04:50:54Z" finished-at="2016-07-20T04:51:29Z">
+  <suite name="Default suite" duration-ms="56574" started-at="2016-08-26T11:00:46Z" finished-at="2016-08-26T11:01:43Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="35437" started-at="2016-07-20T04:50:54Z" finished-at="2016-07-20T04:51:29Z">
-      <class name="com.mis.market.test.ItemCategoryTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.mis.market.test.ItemCategoryTest@108adb01]" name="setUp" is-config="true" duration-ms="4454" started-at="2016-07-20T12:50:54Z" finished-at="2016-07-20T12:50:58Z">
+    <test name="Default test" duration-ms="56574" started-at="2016-08-26T11:00:46Z" finished-at="2016-08-26T11:01:43Z">
+      <class name="com.mis.market.test.ItemSaleTest">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.mis.market.test.ItemSaleTest@7aa7758e]" name="beforeMethod" is-config="true" duration-ms="16519" started-at="2016-08-26T19:00:46Z" finished-at="2016-08-26T19:01:03Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="itemCategoryTest()[pri:0, instance:com.mis.market.test.ItemCategoryTest@108adb01]" name="itemCategoryTest" duration-ms="30731" started-at="2016-07-20T12:50:58Z" finished-at="2016-07-20T12:51:29Z">
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="itemSaleTest()[pri:0, instance:com.mis.market.test.ItemSaleTest@7aa7758e]" name="itemSaleTest" duration-ms="39650" started-at="2016-08-26T19:01:03Z" finished-at="2016-08-26T19:01:42Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- itemCategoryTest -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.mis.market.test.ItemCategoryTest@108adb01]" name="tearDown" is-config="true" duration-ms="228" started-at="2016-07-20T12:51:29Z" finished-at="2016-07-20T12:51:29Z">
+        </test-method> <!-- itemSaleTest -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.mis.market.test.ItemSaleTest@7aa7758e]" name="afterMethod" is-config="true" duration-ms="363" started-at="2016-08-26T19:01:42Z" finished-at="2016-08-26T19:01:43Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- com.mis.market.test.ItemCategoryTest -->
+        </test-method> <!-- afterMethod -->
+      </class> <!-- com.mis.market.test.ItemSaleTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

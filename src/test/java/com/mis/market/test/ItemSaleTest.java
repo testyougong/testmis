@@ -1,83 +1,83 @@
 package com.mis.market.test;
 
-import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-import org.openqa.selenium.Alert;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
+import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.mis.market.pages.ItemSalePage;
 
-import Basic.BasicDriver;
 import Basic.ExcelWorkBook;
+import Basic.Login;
 
-public class ItemSaleTest extends BasicDriver{
-	public ItemSaleTest() throws IOException {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+public class ItemSaleTest {
+	public WebDriver driver;
 
-	@BeforeClass
-	public void setUp() throws Exception{
-		//System.setProperty("webdriver.chrome.driver", "/Users/zhouxin/Desktop/chromedriver"); 
-		driver = new FirefoxDriver();
-		navigation = driver.navigate();
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-	}
-		
-	@AfterClass
-	public void tearDown() throws Exception {
-		driver.quit();
-		System.out.println("ItemSale页面测试结束");
-	}
-		
 	@Test
-	public void itemSaleTest() throws Exception{
-		BasicDriver.open();
-		BasicDriver.login();
-		
+	public void itemSaleTest() throws Exception {
+
 		ItemSalePage itemsale = new ItemSalePage(driver);
-		itemsale.sale_btn().click(); //销售管理按钮
-		
+		itemsale.sale_btn().click(); // 销售管理按钮
+
 		/*
-		 *check状态筛选
+		 * check状态筛选
 		 */
-		for(int j=4;j>=0;j--){
-			itemsale.filter(j).click(); //筛选按钮点击
+		for (int j = 4; j >= 0; j--) {
+			itemsale.filter(j).click(); // 筛选按钮点击
 		}
 
-		itemsale.filterCheck();//筛选检查
-		itemsale.listCheck();//列表数量检查
-		
-		//从excel里取sale_id
+		itemsale.filterCheck();// 筛选检查
+		itemsale.listCheck();// 列表数量检查
+
+		// 从excel里取sale_id
 		ExcelWorkBook excelbook = new ExcelWorkBook();
-		try{
+		try {
 			List<String> sale_list = excelbook.readSaleId("D://GitProsty//testmis//list.xls");
 			int sale_size = sale_list.size();
-			for(int i=0;i<sale_size;i++){
+			for (int i = 0; i < sale_size; i++) {
 				String sale_id = sale_list.get(i);
-				itemsale.saleSearchCheck(sale_id);//check销售列表搜索
+				itemsale.saleSearchCheck(sale_id);// check销售列表搜索
 			}
-		}catch(Exception e){
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 		itemsale.edit_btn().click();
-		itemsale.editSalePriceNormal();//编辑价格(正常价格)
-		itemsale.editSalePriceException();//编辑价格(异常价格,确认更改)
-		itemsale.editSalePriceExceptionEdit();//编辑价格(异常价格,编辑)
-		
-		/*各种保存、取消、编辑按钮的校验
+		itemsale.editSalePriceNormal();// 编辑价格(正常价格)
+		itemsale.editSalePriceException();// 编辑价格(异常价格,确认更改)
+		itemsale.editSalePriceExceptionEdit();// 编辑价格(异常价格,编辑)
+
+		/*
+		 * 各种保存、取消、编辑按钮的校验
 		 */
 		itemsale.edit_btn().click();
 		itemsale.cancel_btn().click();
 		itemsale.edit_btn().click();
 		itemsale.save_btn().click();
-		itemsale.alert_check();//check详情保存
-		
+		itemsale.alert_check();// check详情保存
+
+	}
+
+	@BeforeMethod
+	public void beforeMethod() throws Exception {
+		System.setProperty("Webdriver.firefox.bin", "c:\\Program File (X86)\\MozillaFirefox\\firefox.exe");
+		driver = new FirefoxDriver();
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		Login.execute(driver, "admin@lsh123.com", "654321");
+
+		Thread.sleep(5000);
+		Assert.assertTrue(driver.getPageSource().contains("退出"));
+
+	}
+
+	@AfterMethod
+	public void afterMethod() {
+		driver.quit();
+		System.out.println("ItemSale页面测试结束");
 	}
 }
