@@ -13,6 +13,10 @@ public class Constant {
 	//mis定位方式和定位表达式配置文件相对路径
 	public static String propertiesFilePath="src//main//java//properties//market.properties";
 	//mis测试数据.xlsx相对路径
-	public static String MisTestDataPath="src//main//java//properties//MisTestDataPath.xlsx";
+	public static String MisTestDataPath="src//main//java//properties//MisTestData.xlsx";
+	//mis测试数据sheet名称
+	public static String SheetName="TestData";
+	//mis测试图片相对路径
+	public static String TestPicturePath="src//main//java//properties//";
 
 }

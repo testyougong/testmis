@@ -46,9 +46,13 @@ public class ItemSkuTest {
 		/*
 		 *check状态筛选
 		 */
-		for(int j=2;j>=0;j--){
-			itemsku.filterCheck(j);
-		}
+//		for(int j=2;j>=0;j--){
+//			itemsku.filterCheck(j);
+//		}
+//		
+		itemsku.filterCheck("所有");
+		itemsku.filterCheck("已编辑");
+		itemsku.filterCheck("新建");
 		itemsku.filterStatus();//check状态筛选文案
 		itemsku.listCheck();//check商品列表数量
 		
@@ -77,7 +81,7 @@ public class ItemSkuTest {
 		System.setProperty("Webdriver.firefox.bin", "c:\\Program File (X86)\\MozillaFirefox\\firefox.exe");
 		driver = new FirefoxDriver();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		Login.execute(driver);
+		Login.execute(driver,Constant.UserName,Constant.PassWord);
 
 		Thread.sleep(5000);
 		Assert.assertTrue(driver.getPageSource().contains("退出"));
@@ -86,7 +90,7 @@ public class ItemSkuTest {
 
 	@AfterMethod
 	public void afterMethod() {
-		driver.quit();
+		//driver.quit();
 	}
 	
 }

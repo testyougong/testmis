@@ -11,6 +11,7 @@ import org.testng.annotations.Test;
 import com.mis.market.pages.MisHomecatPage;
 
 import Basic.BasicDriver;
+import Basic.Constant;
 
 public class MisHomecatTest extends BasicDriver{
 	public MisHomecatTest() throws IOException {
@@ -34,8 +35,8 @@ public class MisHomecatTest extends BasicDriver{
 	
 	@Test
 	public static void misHomecatTest() throws Exception{
-		BasicDriver.open();
-		BasicDriver.login();
+//		BasicDriver.open();
+//		BasicDriver.login();
 		
 		MisHomecatPage homecat = new MisHomecatPage(driver);
 		homecat.mis().click();//展开mis
@@ -46,7 +47,7 @@ public class MisHomecatTest extends BasicDriver{
 		 * 第二个熟为品类id
 		 * 第三个数为图片地址
 		 * */
-		homecat.insertHomecat("qatest","001024","/Users/zhouxin/Desktop/11475200908374e48ao.jpg");
+		homecat.insertHomecat("qatest","001024",Constant.TestPicturePath);
 		homecat.homecatCheck("001024");//check列表中有该id的品类
 		homecat.btn_save().click();//保存
 		homecat.save_success();//保存成功

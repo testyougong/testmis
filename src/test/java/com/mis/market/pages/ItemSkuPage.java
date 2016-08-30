@@ -38,9 +38,13 @@ public class ItemSkuPage {
 		driver.findElement(objectMap.getLocator("mis.ItemSkuPage.search_text")).sendKeys(item_id);
 		driver.findElement(objectMap.getLocator("mis.ItemSkuPage.search_btn")).click();
 		Thread.sleep(1000);
+		String text=driver.findElement(objectMap.getLocator("mis.ItemSkuPage.skuid_text")).getText();
+		if (text=="该搜索条件下没有对应的数据") {
+			Assert.fail("该搜索条件下没有对应的数据,请检查");
+		}else{
 		Assert.assertEquals(item_id,
 				driver.findElement(objectMap.getLocator("mis.ItemSkuPage.skuid_text")).getText());
-		
+		}
 		driver.navigate().back();
 		driver.navigate().back();
 	}
@@ -64,40 +68,29 @@ public class ItemSkuPage {
 	public void filterCheck(String str) throws Exception {
 		if (str == "所有") {
 			driver.findElement(objectMap.getLocator("mis.ItemSkuPage.total_btn")).click();
-			String text = driver.findElement(objectMap.getLocator("mis.ItemSkuPage.total_btn")).getText();
+			//String text = driver.findElement(objectMap.getLocator("mis.ItemSkuPage.total_btn")).getText();
 			String listText = driver
 					.findElement(objectMap.getLocator("mis.ItemSkuPage.stat_text"))
 					.getText();
-			if (text.contains("所有")) {
-				Assert.assertTrue("'所有'筛选错误", listText.equals("已编辑") || listText.equals("新建"));
-			} else {
-				Assert.assertTrue(text + "筛选错误", text.contains(listText));
-			}
+			//Assert.assertTrue("'所有'筛选错误", listText.equals("已编辑") || listText.equals("新建"));
+			Assert.assertTrue(listText.equals("已编辑") || listText.equals("新建"));
 			Thread.sleep(1000);
 
 		} else if (str == "已编辑") {
 			driver.findElement(objectMap.getLocator("mis.ItemSkuPage.edit_btn")).click();
-			String text = driver.findElement(objectMap.getLocator("mis.ItemSkuPage.edit_btn")).getText();
+			//String text = driver.findElement(objectMap.getLocator("mis.ItemSkuPage.edit_btn")).getText();
 			String listText = driver
 					.findElement(objectMap.getLocator("mis.ItemSkuPage.stat_text"))
 					.getText();             
-			if (text.contains("所有")) {
-				Assert.assertTrue("'所有'筛选错误", listText.equals("已编辑") || listText.equals("新建"));
-			} else {
-				Assert.assertTrue(text + "筛选错误", text.contains(listText));
-			}
+			Assert.assertTrue(listText.equals("已编辑"));
 			Thread.sleep(1000);
 		} else {
 			driver.findElement(objectMap.getLocator("mis.ItemSkuPage.new_btn")).click();
-			String text = driver.findElement(objectMap.getLocator("mis.ItemSkuPage.new_btn")).getText();
+			//String text = driver.findElement(objectMap.getLocator("mis.ItemSkuPage.new_btn")).getText();
 			String listText = driver
 					.findElement(objectMap.getLocator("mis.ItemSkuPage.stat_text"))
 					.getText();
-			if (text.contains("所有")) {
-				Assert.assertTrue("'所有'筛选错误", listText.equals("已编辑") || listText.equals("新建"));
-			} else {
-				Assert.assertTrue(text + "筛选错误", text.contains(listText));
-			}
+			Assert.assertTrue(listText.equals("新建"));
 			Thread.sleep(1000);
 		}
 	}

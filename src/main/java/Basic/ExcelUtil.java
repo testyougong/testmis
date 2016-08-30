@@ -32,7 +32,9 @@ public class ExcelUtil {
 			//实例化Excel文件的FileInputStream对象
 			ExcelFile=new FileInputStream(Path);
 			//实例化Excel文件的XSSFWorkbook对象
+			//ExcelWBook=new XSSFWorkbook(ExcelFile);
 			ExcelWBook=new XSSFWorkbook(ExcelFile);
+			
 			/*
 			 * 实例化XSSFSheet对象，指定Excel文件中的sheet名称，后续用于sheet中行、列和单元格的操作
 			 * */
@@ -55,6 +57,10 @@ public class ExcelUtil {
 			 * 前面加“”，用于强制double类型到String类型，不加“”则抛出double类型无法转换到String类型的异常*/
 			String CellData=Cell.getCellType()==XSSFCell.CELL_TYPE_STRING?Cell.getStringCellValue()+""
 					:String.valueOf(Math.round(Cell.getNumericCellValue()));
+//			if (CellData.contains(".0")) {
+//				CellData=CellData.split(".")[0];
+//				return CellData;
+//			}
 			return CellData;
 		}catch(Exception e){
 			return "";
@@ -62,11 +68,11 @@ public class ExcelUtil {
 	}
 	
 	//在Excel文件的执行单元格中写入数据
-	@SuppressWarnings("static-access")
 	public static void setCellData(int RowNum,int ColNum,String Result)throws Exception{
 		try {
 			//获取Excel文件中 的行对象
 			Row=ExcelWSheet.getRow(RowNum);
+			System.out.println(Row+"-----");
 			//如果单元格为空，则返回null
 			Cell=Row.getCell(ColNum,Row.RETURN_BLANK_AS_NULL);
 			if (Cell==null) {
@@ -106,7 +112,7 @@ public class ExcelUtil {
 		//声明Workbook 对象
 		Workbook Workbook=null;
 		//获取文件名参数的扩展名，判断是.xlsx文件还是xls文件
-		String fileExtensionName=excelFilePath.substring(excelFilePath.indexOf(","));
+		String fileExtensionName=excelFilePath.substring(excelFilePath.indexOf("."));
 		//判断文件类型如果是.xlsx，则使用XSSFWorkbook对象进行实例化
 		//判断文件类型如果是.xls，则使用SSFWorkbook对象进行实例化
 		if (fileExtensionName.equals(".xlsx")) {
@@ -142,13 +148,19 @@ public class ExcelUtil {
 			/*
 			 if用于判断数据行是否要参与测试的执行，Excel文件的倒数第二列为数据行的状态位
 			 标记为表示此数据行要参与脚本执行，标记为n 表示不执行，跳过*/
-			if (row.getCell(row.getLastCellNum()-2).getStringCellValue().equals("y")) {
+			if (row.getCell(row.getLastCellNum()-1).getStringCellValue().equals("y")) {
 				
 				for(int j=0;j<row.getLastCellNum()-2;j++){
 					//判断excel的单元格字段是否还是字符，字符串格式调用getStringCellValue方法获取
 					//数字格式调用getNumerCellValue方法获取
 					fileds[j]=(String)(row.getCell(j).getCellType()==XSSFCell.CELL_TYPE_STRING ?
 							row.getCell(j).getStringCellValue():""+row.getCell(j).getNumericCellValue());
+					
+					System.out.println(fileds[j]+"====");
+					if (fileds[j].contains(".0")) {
+						 
+						fileds[j]=fileds[j].substring(0, fileds[j].length()-2);
+					}
 					
 				}
 				//fields的数据对象存储到records的list中
@@ -169,9 +181,11 @@ public class ExcelUtil {
 		
 	}
 	
-	public static int getLastColumnNUm(){
-		//返回数据文件最后一列的行号，如果有12列，则结果返回11
-		return ExcelWSheet.getRow(0).getLastCellNum()-1;
+	public static int getLastColumnNum(){
+		//返回数据文件最后一列的列号，如果有12列，则结果返回11
+		int coloumNum=ExcelWSheet.getRow(0).getPhysicalNumberOfCells()-1;
+		return ExcelWSheet.getRow(1).getLastCellNum();
+		
 	}
 	
 

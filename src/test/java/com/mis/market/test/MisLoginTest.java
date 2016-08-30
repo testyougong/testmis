@@ -9,6 +9,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import Basic.Constant;
 import Basic.Login;
 
 public class MisLoginTest {
@@ -18,7 +19,7 @@ public class MisLoginTest {
 	@Test
 	public void testMisLogin() throws Exception{
 		//driver.get(baseUrl+"/");
-		Login.execute(driver);
+		Login.execute(driver,Constant.UserName,Constant.PassWord);
 		 
 		Thread.sleep(5000);
 		Assert.assertTrue(driver.getPageSource().contains("退出"));

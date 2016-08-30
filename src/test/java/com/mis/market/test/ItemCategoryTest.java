@@ -11,6 +11,7 @@ import org.testng.annotations.Test;
 
 import com.mis.market.pages.ItemCategoryPage;
 
+import Basic.Constant;
 import Basic.Login;
 
 public class ItemCategoryTest{
@@ -47,7 +48,7 @@ public class ItemCategoryTest{
 		System.setProperty("Webdriver.firefox.bin", "c:\\Program File (X86)\\MozillaFirefox\\firefox.exe");
 		driver = new FirefoxDriver();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		Login.execute(driver);
+		Login.execute(driver,Constant.UserName,Constant.PassWord);
 
 		Thread.sleep(5000);
 		Assert.assertTrue(driver.getPageSource().contains("退出"));
