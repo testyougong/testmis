@@ -2,23 +2,23 @@
 <testng-results skipped="0" failed="1" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="22419" started-at="2016-08-31T08:18:49Z" finished-at="2016-08-31T08:19:11Z">
+  <suite name="Default suite" duration-ms="22842" started-at="2016-08-31T08:54:02Z" finished-at="2016-08-31T08:54:25Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="22419" started-at="2016-08-31T08:18:49Z" finished-at="2016-08-31T08:19:11Z">
+    <test name="Default test" duration-ms="22842" started-at="2016-08-31T08:54:02Z" finished-at="2016-08-31T08:54:25Z">
       <class name="com.mis.market.test.MisHomecatTest">
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.mis.market.test.MisHomecatTest@45d16dae]" name="beforeMethod" is-config="true" duration-ms="13010" started-at="2016-08-31T16:18:49Z" finished-at="2016-08-31T16:19:02Z">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.mis.market.test.MisHomecatTest@45d16dae]" name="beforeMethod" is-config="true" duration-ms="13282" started-at="2016-08-31T16:54:02Z" finished-at="2016-08-31T16:54:16Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="FAIL" signature="misHomecatTest()[pri:0, instance:com.mis.market.test.MisHomecatTest@45d16dae]" name="misHomecatTest" duration-ms="9361" started-at="2016-08-31T16:19:02Z" finished-at="2016-08-31T16:19:11Z">
+        <test-method status="FAIL" signature="misHomecatTest()[pri:0, instance:com.mis.market.test.MisHomecatTest@45d16dae]" name="misHomecatTest" duration-ms="9518" started-at="2016-08-31T16:54:16Z" finished-at="2016-08-31T16:54:25Z">
           <exception class="org.openqa.selenium.NoAlertPresentException">
             <message>
               <![CDATA[No alert is present (WARNING: The server did not provide any stacktrace information)
 Command duration or timeout: 2.18 seconds
 Build info: version: '2.45.0', revision: '5017cb8e7ca8e37638dc3091b2440b90a1d8686f', time: '2015-02-27 09:10:26'
 System info: host: 'PC-20160510WJWA', ip: '192.169.30.197', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_79'
-Session ID: b0b4c888-1332-432d-8de8-341b5aadeae8
+Session ID: efb3831d-f857-4f37-9d93-80c6e99eb331
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
 Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=36.0.4}]]]>
             </message>
@@ -27,7 +27,7 @@ Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cs
 Command duration or timeout: 2.18 seconds
 Build info: version: '2.45.0', revision: '5017cb8e7ca8e37638dc3091b2440b90a1d8686f', time: '2015-02-27 09:10:26'
 System info: host: 'PC-20160510WJWA', ip: '192.169.30.197', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_79'
-Session ID: b0b4c888-1332-432d-8de8-341b5aadeae8
+Session ID: efb3831d-f857-4f37-9d93-80c6e99eb331
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
 Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=36.0.4}]
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
@@ -71,7 +71,7 @@ Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cs
           <reporter-output>
           </reporter-output>
         </test-method> <!-- misHomecatTest -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.mis.market.test.MisHomecatTest@45d16dae]" name="afterMethod" is-config="true" duration-ms="1" started-at="2016-08-31T16:19:11Z" finished-at="2016-08-31T16:19:11Z">
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.mis.market.test.MisHomecatTest@45d16dae]" name="afterMethod" is-config="true" duration-ms="0" started-at="2016-08-31T16:54:25Z" finished-at="2016-08-31T16:54:25Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->

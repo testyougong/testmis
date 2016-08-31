@@ -33,7 +33,7 @@ public class MisHomecatTest {
 		 * 第二个熟为品类id
 		 * 第三个数为图片地址
 		 * */
-		homecat.insertHomecat("qatest","001024",Constant.TestPicturePath1);
+		homecat.insertHomecat("qatest","001024",Constant.TestPicturePath);
 		homecat.homecatCheck("001024");//check列表中有该id的品类
 		homecat.btn_save().click();//保存
 		homecat.save_success();//保存成功

@@ -17,7 +17,7 @@ public class Constant {
 	//mis测试数据sheet名称
 	public static String SheetName="TestData";
 	//mis测试图片相对路径
-	public static String TestPicturePath1="/src/main/java/properties/TestDataprictur.jpg";
+	public static String TestPicturePath1="/src/main/java//properties//TestDatapr.jpg";
 	public static String TestPicturePath="D:\\TestDataprictur.jpg";
 	//为什么上传图片时，不能写相对路径了?
 
