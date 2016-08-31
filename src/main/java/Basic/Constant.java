@@ -17,6 +17,6 @@ public class Constant {
 	//mis测试数据sheet名称
 	public static String SheetName="TestData";
 	//mis测试图片相对路径
-	public static String TestPicturePath="src//main//java//properties//";
+	//public static String TestPicturePath="src//main//java//properties//TestDataPicture.jpg";
 
 }

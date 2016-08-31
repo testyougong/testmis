@@ -7,10 +7,12 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRichTextString;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -72,16 +74,16 @@ public class ExcelUtil {
 		try {
 			//获取Excel文件中 的行对象
 			Row=ExcelWSheet.getRow(RowNum);
-			System.out.println(Row+"-----");
 			//如果单元格为空，则返回null
 			Cell=Row.getCell(ColNum,Row.RETURN_BLANK_AS_NULL);
 			if (Cell==null) {
 				//当单元格对象时null的时候，则创建单元格
 				//如果单元格为空，无法直接用单元格对象的setCellValue方法设定单元格的值
 				//创建单元格号可以调用setCellValue方法设定单元格的值
+				Cell=Row.createCell(ColNum);
 				Cell.setCellValue(Result);
 				
-				
+			 
 			}
 			else{
 				//单元格中有内容，则可以直接调用单元格对象的setCellValue方法设定单元格的值
@@ -90,7 +92,7 @@ public class ExcelUtil {
 			}
 			//实例化写入Excel文件中的文件输入流对象
 			FileOutputStream fileOut=new FileOutputStream(
-					Constant.TestDataExcelFilePath);
+					Constant.MisTestDataPath);
 			//将内容写入Excel文件中
 			ExcelWBook.write(fileOut);
 			//调用flush方法强制刷新写入文件
@@ -102,8 +104,11 @@ public class ExcelUtil {
 
 		}
 	}
+	
+	
+	
 	//从Excel文件获取测试数据的静态方法
-	public static Object[][] getTestData(String excelFilePath,String sheetName) throws IOException{
+	public static Object[][] getTestData(String excelFilePath,String sheetName) throws Exception{
 		//根据参数传入的数据文件路径和文件名称，组合出Excel数据文件的绝对路径
 		//声明一个file对象
 		File file=new File(excelFilePath);
@@ -156,7 +161,6 @@ public class ExcelUtil {
 					fileds[j]=(String)(row.getCell(j).getCellType()==XSSFCell.CELL_TYPE_STRING ?
 							row.getCell(j).getStringCellValue():""+row.getCell(j).getNumericCellValue());
 					
-					System.out.println(fileds[j]+"====");
 					if (fileds[j].contains(".0")) {
 						 
 						fileds[j]=fileds[j].substring(0, fileds[j].length()-2);
@@ -181,10 +185,10 @@ public class ExcelUtil {
 		
 	}
 	
-	public static int getLastColumnNum(){
+	public static int getLastColumnNum() throws Exception{
 		//返回数据文件最后一列的列号，如果有12列，则结果返回11
-		int coloumNum=ExcelWSheet.getRow(0).getPhysicalNumberOfCells()-1;
-		return ExcelWSheet.getRow(1).getLastCellNum();
+        setExcelFile(Constant.MisTestDataPath, Constant.SheetName);
+		return ExcelWSheet.getRow(0).getLastCellNum()-1;
 		
 	}
 	

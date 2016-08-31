@@ -4,40 +4,30 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import com.mis.market.pages.MisRecomcatPage;
+
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.mis.market.pages.MisHomeitemPage;
 
 import Basic.BasicDriver;
+import Basic.Constant;
+import Basic.Login;
 
 public class MisRecomcatTest extends BasicDriver {
 
-    public MisRecomcatTest() throws IOException {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+	public static WebDriver driver;
 
-    @BeforeClass
-    public void setUp() throws Exception {
-        //System.setProperty("webdriver.chrome.driver", "/Users/zhouxin/Desktop/chromedriver");
-        driver = new FirefoxDriver();
-        navigation = driver.navigate();
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-    }
-
-    @AfterClass
-    public void tearDown() throws Exception {
-        driver.quit();
-        System.out.println("MisRecomcat页面测试结束");
-    }
-
+  
     @Test
     public void misRecomcatTest() throws Exception {
-        BasicDriver.open();
-        BasicDriver.login();
+        
 
         MisRecomcatPage recomcat = new MisRecomcatPage(driver);
         recomcat.mis().click();//展开分类
@@ -54,6 +44,24 @@ public class MisRecomcatTest extends BasicDriver {
         recomcat.save_btn().click();//保存并更新
         recomcat.checkDelete("001024","自动化测试");//检测已删除的分类id和分类名称
     }
+    
+	@BeforeMethod
+	public void beforeMethod() throws Exception {
+		System.setProperty("Webdriver.firefox.bin", "c:\\Program File (X86)\\MozillaFirefox\\firefox.exe");
+		driver = new FirefoxDriver();
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		Login.execute(driver,Constant.UserName,Constant.PassWord);
+
+		Thread.sleep(5000);
+		Assert.assertTrue(driver.getPageSource().contains("退出"));
+
+	}
+
+	@AfterMethod
+	public void afterMethod() {
+		driver.quit();
+		System.out.println("MisHomecatTest页面测试结束");
+	}
 }
 
 

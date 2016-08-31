@@ -18,6 +18,7 @@ public class ItemSkuPage {
 	
 	public ItemSkuPage(WebDriver driver) {
 		this.driver = driver;
+		//
 	}
 
 	// 添加商品按钮
@@ -39,7 +40,7 @@ public class ItemSkuPage {
 		driver.findElement(objectMap.getLocator("mis.ItemSkuPage.search_btn")).click();
 		Thread.sleep(1000);
 		String text=driver.findElement(objectMap.getLocator("mis.ItemSkuPage.skuid_text")).getText();
-		if (text=="该搜索条件下没有对应的数据") {
+		if (text.contains("该搜索条件下没有对应的数据")) {
 			Assert.fail("该搜索条件下没有对应的数据,请检查");
 		}else{
 		Assert.assertEquals(item_id,
