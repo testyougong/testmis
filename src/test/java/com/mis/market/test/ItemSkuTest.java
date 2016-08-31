@@ -82,10 +82,9 @@ public class ItemSkuTest {
 		System.setProperty("Webdriver.firefox.bin", "c:\\Program File (X86)\\MozillaFirefox\\firefox.exe");
 		driver = new FirefoxDriver();
 		//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		//Login.execute(driver,Constant.UserName,Constant.PassWord);
+		Login.execute(driver,Constant.UserName,Constant.PassWord);
 		
-		System.out.println("http://qa.market-mis.wmdev2.lsh123.com/");
-        driver.get("http://qa.market-mis.wmdev2.lsh123.com/");
+		 
 		Thread.sleep(5000);
 		Assert.assertTrue(driver.getPageSource().contains("退出"));
 

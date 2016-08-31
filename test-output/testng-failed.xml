@@ -3,17 +3,18 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test verbose="2" name="Default test">
     <classes>
-      <class name="com.mis.market.test.ItemSkuTest"/>
+      <class name="com.mis.market.test.MisHomecatTest"/>
     </classes>
   </test> <!-- Default test -->
   <test name="Default test(failed)">
     <classes>
-      <class name="com.mis.market.test.ItemSkuTest">
+      <class name="com.mis.market.test.MisHomecatTest">
         <methods>
           <include name="beforeMethod"/>
-          <include name="itemSkuTest"/>
+          <include name="misHomecatTest"/>
+          <include name="afterMethod"/>
         </methods>
-      </class> <!-- com.mis.market.test.ItemSkuTest -->
+      </class> <!-- com.mis.market.test.MisHomecatTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

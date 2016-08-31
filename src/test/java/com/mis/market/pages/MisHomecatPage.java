@@ -63,6 +63,8 @@ public class MisHomecatPage {
 		// 上传图片
 		WebElement upload = driver.findElements(objectMap.getLocator("mis.MisHomecatPage.fileUp_btn"))
 				.get(homecat_list.size() - 1);
+		//upload.click();
+		 
 		upload.sendKeys(picture);
 		Thread.sleep(3000);
 		// 开关置为on
