@@ -11,8 +11,7 @@ import org.testng.annotations.Test;
 
 import com.mis.market.pages.MisHomecatPage;
 
-import Basic.Constant;
-import Basic.Login;
+import Basic.*;
 
 public class MisHomecatTest {
 	public static WebDriver driver;
@@ -60,7 +59,7 @@ public class MisHomecatTest {
 
 	@AfterMethod
 	public void afterMethod() {
-		//driver.quit();
-		System.out.println("MisHomecatTest页面测试结束");
+		driver.quit();
+		Log.info("MisHomecatTest页面测试结束");
 	}
 }

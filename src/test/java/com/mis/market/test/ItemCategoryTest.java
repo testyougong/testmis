@@ -12,6 +12,7 @@ import org.testng.annotations.Test;
 import com.mis.market.pages.ItemCategoryPage;
 
 import Basic.Constant;
+import Basic.Log;
 import Basic.Login;
 
 public class ItemCategoryTest{
@@ -57,6 +58,7 @@ public class ItemCategoryTest{
 
 	@AfterMethod
 	public void afterMethod() {
+		Log.info("ItemCategoryTest测试结束");
 		driver.quit();
 	}
 }

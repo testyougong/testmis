@@ -4,6 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import Basic.Log;
+
 import java.util.List;
 
 import static org.testng.Assert.assertEquals;
@@ -77,7 +79,7 @@ public class MisSearchPage {
         MisSearchPage msp = new MisSearchPage(driver);
         msp.HotqText();
         if((driver.findElement(By.xpath("//html/body/div[1]/div[2]/div/div/div[3]/table/tbody/tr["+position+"]/td[2]")).getText().equals(msp.HotqText()))){
-            System.out.println("热搜词没有删除成功");
+            Log.info("热搜词没有删除成功");
             assertEquals (driver.findElement(By.xpath("//html/body/div[1]/div[2]/div/div/div[3]/table/tbody/tr["+position+"]/td[2]")).getText(),msp.HotqText());
         }
     }

@@ -100,7 +100,7 @@ public class BasicDriver /* extends properties */ {
 	}
 
 	/*
-	 *** 某些元素由于属于某个iframe的需要先定义到frame然后再在此frame里边查找该元素 此方法适合定位文本链接型元素
+	 * 某些元素由于属于某个iframe的需要先定义到frame然后再在此frame里边查找该元素 此方法适合定位文本链接型元素
 	 */
 	public static void frame(By by, String text) {
 		WebElement element = driver.switchTo().frame(text).findElement(by);
@@ -108,7 +108,7 @@ public class BasicDriver /* extends properties */ {
 	}
 
 	/*
-	 *** 某些元素由于属于某个iframe的需要先定义到frame然后再在此frame里边查找该元素 此方法适合定位文本输入框型元素
+	 * 某些元素由于属于某个iframe的需要先定义到frame然后再在此frame里边查找该元素 此方法适合定位文本输入框型元素
 	 */
 	public static void frameElementSendKey(By by, String text) {
 		WebElement element = driver.switchTo().frame(text).findElement(by);

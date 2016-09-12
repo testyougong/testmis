@@ -14,6 +14,7 @@ import com.mis.market.pages.ItemSkuPage;
 
 import Basic.Constant;
 import Basic.ExcelWorkBook;
+import Basic.Log;
 import Basic.Login;
 
 public class ItemSkuTest {
@@ -92,7 +93,8 @@ public class ItemSkuTest {
 
 	@AfterMethod
 	public void afterMethod() {
-		//driver.quit();
+		Log.info("ItemSkuTest");
+		driver.quit();
 	}
 	
 }

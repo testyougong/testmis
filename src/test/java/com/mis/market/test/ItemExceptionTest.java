@@ -65,6 +65,7 @@ import org.testng.annotations.Test;
 import com.mis.market.pages.ItemExceptionPage;
 
 import Basic.Constant;
+import Basic.Log;
 import Basic.Login;
 
 public class ItemExceptionTest /*extends BasicDriver*/ {
@@ -107,6 +108,7 @@ public class ItemExceptionTest /*extends BasicDriver*/ {
 
 	@AfterMethod
 	public void afterMethod() {
+		Log.info("ItemExceptionTest测试结束");
 		driver.quit();
 	}
 }

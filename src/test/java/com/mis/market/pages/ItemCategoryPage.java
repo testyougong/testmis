@@ -10,6 +10,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import Basic.Constant;
+import Basic.Log;
 import Basic.properties;
 
 public class ItemCategoryPage {
@@ -111,13 +112,13 @@ public class ItemCategoryPage {
 		if (str == "下架") {
 			for (String sta : status_list) {
 				if (sta.equals("上架")) {
-					System.out.println("'下架'筛选错误");
+					Log.info("'下架'筛选错误");
 				}
 			}
 		} else if (str == "上架") {
 			for (String sta : status_list) {
 				if (sta.equals("下架")) {
-					System.out.println("'上架'筛选错误");
+					Log.info("'上架'筛选错误");
 				}
 			}
 		} else if (str == "所有") {
@@ -126,7 +127,7 @@ public class ItemCategoryPage {
 				if (sta.equals("上架") || sta.equals("下架")) {
 
 				} else {
-					System.out.println("'全部'筛选错误");
+					Log.info("'全部'筛选错误");
 				}
 			}
 		}

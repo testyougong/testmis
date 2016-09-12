@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import Basic.Constant;
+import Basic.Log;
 import Basic.properties;
 
 import java.util.List;
@@ -78,7 +79,7 @@ public class MisHomegalleryPage {
 			//秒杀活动不用填写内容
 			break;
 		default:
-			System.out.println("case存在问题");
+			Log.info("case存在问题");
 			break;	
 		}
 		//上传图片

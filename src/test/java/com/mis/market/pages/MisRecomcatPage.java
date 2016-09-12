@@ -1,6 +1,8 @@
 package com.mis.market.pages;
 
 import Basic.BasicDriver;
+import Basic.Log;
+
 import org.junit.Assert;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
@@ -110,7 +112,7 @@ public class MisRecomcatPage {
         List<WebElement> list = driver.findElements(By.linkText("查看详情"));
         int position = list.size()-1;
         if(driver.findElements(By.xpath("//td[@class='id']")).get(position).getText().equals(cat_id) || driver.findElements(By.xpath("//td[@class='cat-name']")).get(position).getText().equals(cat_name)) {
-            System.out.println("删除没有生效");
+            Log.info("删除没有生效");
         }
     }
 

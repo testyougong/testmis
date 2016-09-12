@@ -1,6 +1,5 @@
 package com.mis.market.test;
 
-import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import junit.framework.Assert;
@@ -14,6 +13,7 @@ import org.testng.annotations.Test;
 
 import Basic.Constant;
 import Basic.ExcelUtil;
+import Basic.Log;
 import Basic.Login;
 
 public class TestUtil {
@@ -67,13 +67,14 @@ public class TestUtil {
 		} catch (AssertionError error) {
 			ExcelUtil.setCellData(Integer.parseInt(CaseRowNumber.split("[.]")[0]), ExcelUtil.getLastColumnNum(),
 					"测试执行失败");
+			
 			Assert.fail("断言mis页面是否包含退出关键字失败");
 		}
 
  
 		
 		ExcelUtil.setCellData(Integer.parseInt(CaseRowNumber.split("[.]")[0]),ExcelUtil.getLastColumnNum(), "测试执行成功");
-		// Log.info("测试结果成功写入测试执行结果列中");
+		Log.info("测试结果成功写入测试执行结果列中");
 	}
 
 	@BeforeMethod

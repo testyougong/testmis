@@ -18,6 +18,7 @@ import com.mis.market.pages.MisHomeitemPage;
 
 import Basic.BasicDriver;
 import Basic.Constant;
+import Basic.Log;
 import Basic.Login;
 
 public class MisRecomcatTest extends BasicDriver {
@@ -60,7 +61,7 @@ public class MisRecomcatTest extends BasicDriver {
 	@AfterMethod
 	public void afterMethod() {
 		driver.quit();
-		System.out.println("MisHomecatTest页面测试结束");
+		Log.info("misRecomcatTest页面测试结束");
 	}
 }
 

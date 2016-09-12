@@ -14,6 +14,7 @@ import com.mis.market.pages.ItemSalePage;
 
 import Basic.Constant;
 import Basic.ExcelWorkBook;
+import Basic.Log;
 import Basic.Login;
 
 public class ItemSaleTest {
@@ -79,6 +80,6 @@ public class ItemSaleTest {
 	@AfterMethod
 	public void afterMethod() {
 		driver.quit();
-		System.out.println("ItemSale页面测试结束");
+		Log.info("ItemSale页面测试结束");
 	}
 }

@@ -9,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import Basic.Constant;
+import Basic.Log;
 import Basic.properties;
 
 public class MisHomecatPage {
@@ -42,7 +43,7 @@ public class MisHomecatPage {
 				return element;
 			}
 		}
-		System.out.println("不存在名称为：" + id + " 的品类");
+		Log.info("不存在名称为：" + id + " 的品类");
 		return null;
 	}
 

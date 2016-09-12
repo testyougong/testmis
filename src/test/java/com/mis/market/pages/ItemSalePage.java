@@ -13,6 +13,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import Basic.Constant;
+import Basic.Log;
 import Basic.properties;
 
 public class ItemSalePage {
@@ -94,9 +95,9 @@ public class ItemSalePage {
 			driver.findElement(objectMap.getLocator("mis.ItemSalePage.immediately_btn")).click();
 
 			driver.findElement(objectMap.getLocator("mis.ItemSalePage.sumit_btn")).click();
-			System.out.println("确认按钮已被点击");
+			Log.info("确认按钮已被点击");
 		} else {
-			System.out.println("'立即生效'按钮不存在");
+			Log.info("'立即生效'按钮不存在");
 		}
 	}
 

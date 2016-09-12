@@ -10,6 +10,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import Basic.Constant;
+import Basic.Log;
 import Basic.Login;
 
 public class MisLoginTest {
@@ -35,6 +36,7 @@ public class MisLoginTest {
 	
 	@AfterMethod
 	public void afterMethod(){
+		Log.info("MisLogin测试结束");
 		driver.quit();
 	}
 

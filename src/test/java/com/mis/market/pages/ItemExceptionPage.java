@@ -10,6 +10,7 @@ import org.openqa.selenium.WebElement;
 
 import Basic.BasicDriver;
 import Basic.Constant;
+import Basic.Log;
 import Basic.properties;
 
 public class ItemExceptionPage {
@@ -46,7 +47,7 @@ public class ItemExceptionPage {
 		Thread.sleep(1000);
 		String text = driver.findElement(By.xpath("//li[@data-value=" + n + "]")).getText();
 		if (text.contains("(0)")) {
-			System.out.println("暂无数据");
+			Log.info("暂无数据");
 
 		} else {
 			// 判断是否存在数据，如果存在进行判断
@@ -111,7 +112,7 @@ public class ItemExceptionPage {
 						.getText();
 				if (nullText.equals(("暂无数据"))) {
 
-					System.out.println("所选选项暂无数据");
+					Log.info("所选选项暂无数据");
 				}
 				// else{
 				// Assert.assertTrue("'所有'筛选错误", nullText.equals("暂无数据"));
