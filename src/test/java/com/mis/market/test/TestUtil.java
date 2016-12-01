@@ -11,10 +11,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import Basic.Constant;
-import Basic.ExcelUtil;
-import Basic.Log;
-import Basic.Login;
+import Basic.*;
 
 public class TestUtil {
 

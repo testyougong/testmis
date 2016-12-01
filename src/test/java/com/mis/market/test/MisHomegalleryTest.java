@@ -10,10 +10,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import com.mis.market.pages.MisHomegalleryPage;
 
-import Basic.BasicDriver;
-import Basic.Constant;
-import Basic.Log;
-import Basic.Login;
+import Basic.*;
 
 public class MisHomegalleryTest {
 

@@ -23,7 +23,7 @@ public class ItemCategoryPage {
 		this.driver = driver;
 	}
 
-	// //品类管理入口
+	//品类管理入口
 	public WebElement category_btn() throws Exception {
 		element = driver.findElement(objectMap.getLocator("mis.ItemCategoryPage.category_btn"));
 		return element;

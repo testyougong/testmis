@@ -20,5 +20,8 @@ public class Constant {
 	public static String TestPicturePath1="/src/main/java//properties//TestDatapr.jpg";
 	public static String TestPicturePath="D:\\TestDataprictur.jpg";
 	//为什么上传图片时，不能写相对路径了?
+	public static String newWindowUrl="http://qa.market-mis.wmdev2.lsh123.com/mis/homeitem/new";
+	public static String oldwWindowUrl="http://qa.market-mis.wmdev2.lsh123.com/mis/homeitem/list";
+	public static String ChromeDriverURL="src//main//java//properties//chromedriver.exe";
 
 }

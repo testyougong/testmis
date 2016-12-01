@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.NoSuchElementException;
+import java.util.Set;
 
 import org.apache.commons.io.FileUtils;
 
@@ -78,9 +79,60 @@ public class BasicDriver /* extends properties */ {
 
 	// 窗口切换
 	public static void windows(int i) {
+
 		String[] handles = new String[driver.getWindowHandles().size()];
+
+		System.out.println("窗口：" + handles.length);
 		driver.getWindowHandles().toArray(handles);
 		driver.switchTo().window(handles[i]);
+	}
+
+	public static boolean switchToWindow_Title(WebDriver driver, String windowTitle) {
+
+		boolean flag = false;
+
+		try {
+			String currentHandle = driver.getWindowHandle();
+
+			Set<String> handles = driver.getWindowHandles();
+
+			for (String s : handles) {
+
+				if (s.equals(currentHandle))
+
+					continue;
+
+				else {
+
+					driver.switchTo().window(s);
+
+					if (driver.getTitle().contains(windowTitle))
+
+					{
+
+						flag = true;
+
+						System.out.println("Switch to Window: " + windowTitle + "  successfully~~~!");
+
+						break;
+
+					} else
+						continue;
+
+				}
+
+			}
+
+		} catch (NoSuchWindowException e) {
+
+			System.out.println("Window: " + windowTitle + " cound not find!!!" + e.fillInStackTrace());
+
+			flag = false;
+
+		}
+
+		return flag;
+
 	}
 
 	// 时间方法
