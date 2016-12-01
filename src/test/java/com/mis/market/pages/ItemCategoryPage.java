@@ -14,8 +14,10 @@ import Basic.Log;
 import Basic.properties;
 
 public class ItemCategoryPage {
+	// 品类管理页面
 	private WebElement element = null;
-	//private String propurl = "src//main//java//properties//market.properties";// 配置文件相对路径
+	// private String propurl =
+	// "src//main//java//properties//market.properties";// 配置文件相对路径
 	private properties objectMap = new properties(Constant.propertiesFilePath);
 	private WebDriver driver = null;
 
@@ -23,7 +25,7 @@ public class ItemCategoryPage {
 		this.driver = driver;
 	}
 
-	//品类管理入口
+	// 品类管理入口
 	public WebElement category_btn() throws Exception {
 		element = driver.findElement(objectMap.getLocator("mis.ItemCategoryPage.category_btn"));
 		return element;
@@ -72,12 +74,8 @@ public class ItemCategoryPage {
 	// }
 	// }
 	// }
-	//
-	//
-	//
-	//
 
-	// //check筛选
+	// check筛选
 	public void filterCheck(String str) throws Exception {
 		String text = null;
 		if (str == "上架") {
@@ -85,23 +83,35 @@ public class ItemCategoryPage {
 			driver.findElement(objectMap.getLocator("mis.ItemCategoryPage.shelves_btn")).click();
 			text = driver.findElement(objectMap.getLocator("mis.ItemCategoryPage.shelves_btn")).getText();
 
-			// By.linkText("查看")
+			//text=上架
 		} else if (str == "下架") {
 			driver.findElement(objectMap.getLocator("mis.ItemCategoryPage.Theshelves_btn")).click();
 			text = driver.findElement(objectMap.getLocator("mis.ItemCategoryPage.Theshelves_btn")).getText();
-		} else {
+			//text=下架
+		} else if (str == "所有") {
 			driver.findElement(objectMap.getLocator("mis.ItemCategoryPage.total_btn")).click();
 			text = driver.findElement(objectMap.getLocator("mis.ItemCategoryPage.total_btn")).getText();
+			//text=所有
+		} else {
+			Log.info("没有此状态，请检查");
 		}
 
 		// 验证筛选出来的数量和实际数量是否一致 By.xpath("//li[@data-value="+n+"]")
+		//获取所有数据--根据查看按钮
 		List<WebElement> list = driver.findElements(objectMap.getLocator("mis.ItemCategoryPage.view_btn"));
 
 		StringBuffer strb = new StringBuffer(text);
 		String sta_count = text.substring(3, strb.length() - 1);
 		int sta_counts = Integer.parseInt(sta_count);
-		Assert.assertEquals(sta_counts, list.size());
-		// 验证筛选的状态是否正确
+		//Assert.assertEquals(sta_counts, list.size());
+		if (sta_counts!=list.size()){
+			Assert.fail("筛选出来的数量和实际数量不一致，请检查");
+			Log.info("筛选出来的数量和实际数量不一致，请检查");
+		}else{
+			Log.info("筛选出来的数量和实际数量一致");
+		}
+		
+		//验证筛选的状态是否正确
 		ArrayList<String> status_list = new ArrayList<String>();
 		for (int m = 1; m <= list.size(); m++) {
 			String status = driver
@@ -109,15 +119,18 @@ public class ItemCategoryPage {
 					.getText();
 			status_list.add(status);
 		}
+
 		if (str == "下架") {
 			for (String sta : status_list) {
 				if (sta.equals("上架")) {
-					Log.info("'下架'筛选错误");
+					Assert.fail();
+					Log.info("'下架'状态筛选错误");
 				}
 			}
 		} else if (str == "上架") {
 			for (String sta : status_list) {
 				if (sta.equals("下架")) {
+					Assert.fail();
 					Log.info("'上架'筛选错误");
 				}
 			}
@@ -127,6 +140,7 @@ public class ItemCategoryPage {
 				if (sta.equals("上架") || sta.equals("下架")) {
 
 				} else {
+					Assert.fail();
 					Log.info("'全部'筛选错误");
 				}
 			}
