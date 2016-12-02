@@ -59,37 +59,37 @@ public class ItemExceptionPage {
 			Scroll();//能够滑动，说明存在数据（因为有状态）
 			
 			
-
-			if (BasicDriver.isExist("mis.ItemExceptionPage.state_btn")) {
-				driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-				String status = driver.findElement(objectMap.getLocator("mis.ItemExceptionPage.state_btn")).getText();
-				if (text.contains("所有异常商品")) {
-					try {
-						if (BasicDriver.isElementExist(objectMap.getLocator("mis.ItemExceptionPage.state_btn"))) {
-							driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-							driver.findElement(objectMap.getLocator("mis.ItemExceptionPage.state_btn")).getText();
-							if (text.contains("所有异常商品")) {
-								Assert.assertTrue("'所有'筛选错误", status.equals("A档异常商品") || status.equals("B档异常商品")
-										|| status.equals("C档异常商品") || status.equals("供货价为0商品") || status.equals("负毛利商品")
-										|| status.equals("供货价异常") || status.equals("销售价异常") || status.equals("促销价异常"));
-							} else {
-								Assert.assertTrue(text + " 筛选错误", text.contains(status));
-							}
-						} else {
-							driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-							String nullText = driver
-									.findElement(objectMap.getLocator("mis.ItemExceptionPage.message_text")).getText();
-
-							Assert.assertTrue("'所有'筛选错误", nullText.equals("暂无数据"));
-						}
-					} catch (Exception e) {
-						e.printStackTrace();
-					}
-
-					Thread.sleep(1000);
-				}
-				// 还有别的tab判断
-			}
+//
+//			if (BasicDriver.isExist("mis.ItemExceptionPage.state_btn")) {
+//				driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+//				String status = driver.findElement(objectMap.getLocator("mis.ItemExceptionPage.state_btn")).getText();
+//				if (text.contains("所有异常商品")) {
+//					try {
+//						if (BasicDriver.isElementExist(objectMap.getLocator("mis.ItemExceptionPage.state_btn"))) {
+//							driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+//							driver.findElement(objectMap.getLocator("mis.ItemExceptionPage.state_btn")).getText();
+//							if (text.contains("所有异常商品")) {
+//								Assert.assertTrue("'所有'筛选错误", status.equals("A档异常商品") || status.equals("B档异常商品")
+//										|| status.equals("C档异常商品") || status.equals("供货价为0商品") || status.equals("负毛利商品")
+//										|| status.equals("供货价异常") || status.equals("销售价异常") || status.equals("促销价异常"));
+//							} else {
+//								Assert.assertTrue(text + " 筛选错误", text.contains(status));
+//							}
+//						} else {
+//							driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+//							String nullText = driver
+//									.findElement(objectMap.getLocator("mis.ItemExceptionPage.message_text")).getText();
+//
+//							Assert.assertTrue("'所有'筛选错误", nullText.equals("暂无数据"));
+//						}
+//					} catch (Exception e) {
+//						e.printStackTrace();
+//					}
+//
+//					Thread.sleep(1000);
+//				}
+//				// 还有别的tab判断
+//			}
 		}
 
 	}
