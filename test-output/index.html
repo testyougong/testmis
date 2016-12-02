@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Default_suite">
-              <span class="suite-name border-skipped">Default suite</span>
+              <span class="suite-name border-failed">Default suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -49,12 +49,12 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
-                    <span>C:\Users\Administrator\AppData\Local\Temp\testng-eclipse--1444095743\testng-customsuite.xml</span>
+                    <span>C:\Users\Administrator\AppData\Local\Temp\testng-eclipse--823888476\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
                   <a href="#" class="navigator-link " panel-name="testlist-Default_suite">
-                    <span class="test-stats">1 test</span>
+                    <span class="test-stats">2 tests</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,21 +91,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,  1 skipped,  </span>
+                    <span class="method-stats">1 method, 1 failed,   </span>
                   </li>
                   <li>
-                    <span class="method-list-title skipped">Skipped methods</span>
-                    <span class="show-or-hide-methods skipped">
-                      <a href="#" panel-name="suite-Default_suite" class="hide-methods skipped suite-Default_suite"> (hide)</a> <!-- hide-methods skipped suite-Default_suite -->
-                      <a href="#" panel-name="suite-Default_suite" class="show-methods skipped suite-Default_suite"> (show)</a> <!-- show-methods skipped suite-Default_suite -->
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods failed suite-Default_suite"> (hide)</a> <!-- hide-methods failed suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods failed suite-Default_suite"> (show)</a> <!-- show-methods failed suite-Default_suite -->
                     </span>
-                    <div class="method-list-content skipped suite-Default_suite">
+                    <div class="method-list-content failed suite-Default_suite">
                       <span>
-                        <img width="3%" src="skipped.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.mis.market.test.MisHomeitemTest" hash-for-method="misHomeitemTest">misHomeitemTest</a> <!-- method navigator-link -->
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.mis.market.test.ItemExceptionTest" hash-for-method="itemExceptionTest">itemExceptionTest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content skipped suite-Default_suite -->
+                    </div> <!-- method-list-content failed suite-Default_suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -117,25 +117,80 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Default_suite" class="panel Default_suite">
-          <div class="suite-Default_suite-class-skipped">
+          <div class="suite-Default_suite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="skipped.png"/>
-              <span class="class-name">com.mis.market.test.MisHomeitemTest</span>
+              <img src="failed.png"/>
+              <span class="class-name">com.mis.market.test.ItemExceptionTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="misHomeitemTest">
-                  </a> <!-- misHomeitemTest -->
-                  <span class="method-name">misHomeitemTest</span>
+                  <a name="itemExceptionTest">
+                  </a> <!-- itemExceptionTest -->
+                  <span class="method-name">itemExceptionTest</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//li[@data-value=9]&quot;}
+Command duration or timeout: 10.05 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;2.45.0&apos;, revision: &apos;5017cb8e7ca8e37638dc3091b2440b90a1d8686f&apos;, time: &apos;2015-02-27 09:10:26&apos;
+System info: host: &apos;PC-20160510WJWA&apos;, ip: &apos;192.169.30.197&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.7.0_79&apos;
+*** Element info: {Using=xpath, value=//li[@data-value=9]}
+Session ID: 360872e8-ed32-4d9e-b92e-57a811e924d1
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=36.0.4}]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:599)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:449)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:357)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at com.mis.market.pages.ItemExceptionPage.filterCheck(ItemExceptionPage.java:48)
+	at com.mis.market.test.ItemExceptionTest.itemExceptionTest(ItemExceptionTest.java:92)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:152)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:57)
+Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//li[@data-value=9]&quot;}
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;2.45.0&apos;, revision: &apos;5017cb8e7ca8e37638dc3091b2440b90a1d8686f&apos;, time: &apos;2015-02-27 09:10:26&apos;
+System info: host: &apos;PC-20160510WJWA&apos;, ip: &apos;192.169.30.197&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.7.0_79&apos;
+Driver info: driver.version: unknown
+	at &lt;anonymous class&gt;.FirefoxDriver.prototype.findElementInternal_(file:///C:/Users/ADMINI~1/AppData/Local/Temp/anonymous2845828268860793476webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10271)
+	at &lt;anonymous class&gt;.fxdriver.Timer.prototype.setTimeout/&lt;.notify(file:///C:/Users/ADMINI~1/AppData/Local/Temp/anonymous2845828268860793476webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:603)
+
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Default_suite-class-skipped -->
+          </div> <!-- suite-Default_suite-class-failed -->
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\Administrator\AppData\Local\Temp\testng-eclipse--1444095743\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\Administrator\AppData\Local\Temp\testng-eclipse--823888476\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -144,9 +199,20 @@
 &lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Default suite&quot;&gt;
   &lt;test verbose=&quot;2&quot; name=&quot;Default test&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.mis.market.test.MisHomeitemTest&quot;/&gt;
+      &lt;class name=&quot;com.mis.market.test.ItemExceptionTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
+  &lt;test name=&quot;Default test(failed)&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.mis.market.test.ItemExceptionTest&quot;&gt;
+        &lt;methods&gt;
+          &lt;include name=&quot;beforeMethod&quot;/&gt;
+          &lt;include name=&quot;afterMethod&quot;/&gt;
+          &lt;include name=&quot;itemExceptionTest&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- com.mis.market.test.ItemExceptionTest --&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Default test(failed) --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -159,6 +225,9 @@
             <ul>
               <li>
                 <span class="test-name">Default test (1 class)</span>
+              </li>
+              <li>
+                <span class="test-name">Default test(failed) (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -186,14 +255,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'misHomeitemTest')
-data.setCell(0, 2, 'com.mis.market.test.MisHomeitemTest')
-data.setCell(0, 3, 3);
+data.setCell(0, 1, 'itemExceptionTest')
+data.setCell(0, 2, 'com.mis.market.test.ItemExceptionTest')
+data.setCell(0, 3, 51055);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 3 ms</span>
+              <span class="suite-total-time">Total running time: 51 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -219,17 +288,21 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.mis.market.test.MisHomeitemTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.mis.market.test.ItemExceptionTest</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">beforeMethod</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">misHomeitemTest</span>
-                <span class="method-start">9440 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">itemExceptionTest</span>
+                <span class="method-start">15255 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod</span>
+                <span class="method-start">66350 ms</span>
+              </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->
